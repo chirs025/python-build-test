@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "student-github-actions-demo"
+version = "1.0.0"
+description = "A small Python example for GitHub Actions build and test homework"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "Student"}]
+
+[tool.setuptools.packages.find]
+where = ["src"]

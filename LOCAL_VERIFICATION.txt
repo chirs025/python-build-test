@@ -1,0 +1,19 @@
+GitHub Actions Python Build and Test — local verification log
+2026-11-24
+
+Environment: Linux, Python 3.13.5
+Source tests: python -m pytest -v tests   (PYTHONPATH=src)
+Result: 8 passed in 0.09s
+
+Wheel build: python -m pip wheel . --no-deps --no-build-isolation -w dist
+Result: Successfully built student-github-actions-demo
+Wheel: student_github_actions_demo-1.0.0-py3-none-any.whl
+
+Source distribution: setuptools.build_meta.build_sdist('dist')
+Result: student_github_actions_demo-1.0.0.tar.gz
+
+Installed-wheel verification: python -m pip install --no-index --no-deps --target /tmp/github_actions_installed_wheel dist/*.whl
+Then: PYTHONPATH=/tmp/github_actions_installed_wheel python -m pytest -q tests
+Result: 8 passed in 0.05s
+
+Important: This is a LOCAL verification record; it is NOT a real GitHub Actions run. The GitHub repository and run links must be completed by the student.
